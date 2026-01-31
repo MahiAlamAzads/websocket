@@ -62,7 +62,7 @@
     socket.addEventListener('open', ()=>{ //we could use websocket.onopen
         statusEl.textContent = "CONNECTED: ws://localhost:8080";
         statusEl.className = 'status-on';
-        appendLog('SYSTEM', 'Tunnel Established')
+        appendLog('[SYSTEM]', 'Tunnel Established')
     })
 
     socket.addEventListener('close', ()=>{ //we could use websocket.onclose
@@ -72,10 +72,10 @@
     })
 
     socket.addEventListener('message', (e)=>{
-        appendLog('[RESCEIVED]', e.data)
+        appendLog('[RECEIVED]', e.data)
     })
 
-    document.getElementById("message-input")
+    document.getElementById("message-form")  //here i wrote message-input instead of message-form 
     .addEventListener('submit', (e)=>{
         e.preventDefault();
 
